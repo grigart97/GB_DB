@@ -1,6 +1,4 @@
-SELECT
-       COUNT(*),
-       user_id,
-       (select lastname, firstname from users where users.id = media.user_id) as 'name'
-FROM media
-GROUP BY user_id
+SET @for_user_id = 101;
+
+SELECT p2.user_id
+FROM profiles p1 JOIN profiles p2 ON p1.hometown = p2.hometown
